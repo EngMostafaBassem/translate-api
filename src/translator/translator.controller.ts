@@ -6,7 +6,7 @@ import {TranslateDTO} from './dto/translate'
 export class TranslatorController {
     constructor(private readonly translateService: TranslatorService) {}
     @Post()
-    translate(@Body() body:TranslateDTO):Promise<string>{
+    translate(@Body() body:TranslateDTO):Promise<any>{
         return this.translateService.translate(body)
     }
 

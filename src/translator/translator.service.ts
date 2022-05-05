@@ -1,9 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { TranslateDTO } from './dto/translate';
-import {translate} from 'free-translate'
+
+const translate = require('@vitalets/google-translate-api');
 @Injectable()
 export class TranslatorService {
     async translate({from,to,query}:TranslateDTO):Promise<string>{
-       return translate(query, {from:'ar',to:'de'});    
+        const translatedText=await translate('Ik spreek Engels', {to: 'en'})
+       return  translatedText.text
      }
 }
