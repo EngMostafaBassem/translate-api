@@ -4,8 +4,8 @@ const { translate } = require('free-translate');
 @Injectable()
 export class TranslatorService {
     async translate({from,to,query}:TranslateDTO):Promise<string>{
-       const response=await translate(query, {from,to});    
-        return response
-        
+       // const response=await translate(query, {from,to});    
+        return `from ${from} to ${to} query ${query}`
+     
      }
 }
